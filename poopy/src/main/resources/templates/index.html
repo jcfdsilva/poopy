@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>List of cards</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link type="text/css"rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" /> 
+</head>
+<body>
+	<div class="header">
+		<form th:action="@{/logout}" method="post">
+			<input type="submit" value="Sign Out" class="btn btn-sm btn-danger"/>
+		</form>
+	</div>
+	<h1>Questions</h1>
+	<a class="btn btn-success"href="/addQuest">New Question</a>
+	<div class="div questions">
+		<div th:each="card : ${questions}">
+		 <a class="delete" th:href="@{/deleteQuest/{card}(card=${card})}">X</a>
+		 <p th:text="${card}"/>
+		</div>
+	</div>
+	<h1>Answers</h1>
+	<a class="btn btn-success"href="/addAns">New Answer</a>
+	<div class="div answers">
+		<div th:each="card : ${answers}">
+		 <a class="delete" th:href="@{/deleteAns/{card}(card=${card})}">X</a>
+		 <p th:text="${card}"/>
+		</div>
+	</div>
+    
+
+</body>
+</html>
