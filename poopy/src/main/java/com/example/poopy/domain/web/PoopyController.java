@@ -52,6 +52,14 @@ public class PoopyController {
 		cards.add("card14");
 		cards.add("card15");
 		cards.add("card16");
+		cards.add("card17");
+		cards.add("card18");
+		cards.add("card19");
+		cards.add("card20");
+		cards.add("card21");
+		cards.add("card22");
+		cards.add("card23");
+		cards.add("card24");
 		questions.add("quest1");
 		questions.add("quest2");
 		questions.add("quest3");
