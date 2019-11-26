@@ -24,7 +24,7 @@ public class Game {
 	private String[] questions=new String[6];
 	private String code;
 	private String question;
-	private int judgeindex;
+	private Long judgeindex;
 	private int round = 1;
 	private boolean started=false;
 
@@ -85,7 +85,7 @@ public class Game {
 		System.out.println(judgeindex+1);
 
 		if(this.judgeindex>=players.size()) {
-			this.judgeindex=0;
+			this.judgeindex=0L;
 		}
 		
 		
@@ -118,7 +118,8 @@ public class Game {
 
 	public void StartGame(PlayerRepository prepo, String[] questions, String[] cards) {
 		this.questions=questions;
-		this.judgeindex=(int)((Math.random())*this.players.size());
+		int judge=(int)((Math.random())*this.players.size());
+		this.judgeindex=players.get(judge).getPlayerid();
 		distributeCards(prepo, cards);
 		this.started=true;
 	}
@@ -176,11 +177,11 @@ public class Game {
 		this.question = question;
 	}
 
-	public int getJudgeindex() {
+	public Long getJudgeindex() {
 		return judgeindex;
 	}
 
-	public void setJudgeindex(int judgeindex) {
+	public void setJudgeindex(Long judgeindex) {
 		this.judgeindex = judgeindex;
 	}
 
