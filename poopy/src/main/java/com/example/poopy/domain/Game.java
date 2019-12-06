@@ -81,11 +81,12 @@ public class Game {
 		}
 		
 		//next judge
-		this.judgeindex=this.judgeindex+1;
-		System.out.println(judgeindex+1);
-
-		if(this.judgeindex>=players.size()) {
-			this.judgeindex=0L;
+		for (int i = 0; i < players.size()-1; i++) {
+			if (players.get(i).getPlayerid()==judgeindex) {
+				judgeindex=players.get(i+1).getPlayerid();
+				break;
+			}
+			judgeindex=players.get(0).getPlayerid();
 		}
 		
 		
