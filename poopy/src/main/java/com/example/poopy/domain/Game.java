@@ -80,20 +80,11 @@ public class Game {
 			}
 		}
 		
-		//next judge
-		for (int i = 0; i < players.size()-1; i++) {
-			if (players.get(i).getPlayerid()==judgeindex) {
-				judgeindex=players.get(i+1).getPlayerid();
-				break;
-			}
-			judgeindex=players.get(0).getPlayerid();
-		}
-		
 		
 		//cards played are available again
 		for (int i = 0; i < cards.length; i++) {
 			for (int j = 0; j < players.size(); j++) {
-				if(players.get(j).getAnswer().equals(cards[i]))
+				if(players.get(j).getAnswer()!=null && players.get(j).getAnswer().equals(cards[i]))
 					cardsDist[i]=false;
 			}
 		}
@@ -103,14 +94,26 @@ public class Game {
 			int rand = (int)(Math.random()*this.cards.length);
 			if(this.cardsDist[rand]==false) {
 				Player p = players.get(i);
-				p.addCard(this.cards[rand]);
-				prepo.save(p);
-				this.cardsDist[rand]=true;
+				if(p.getPlayerid()!=judgeindex) {
+					p.addCard(this.cards[rand]);
+					prepo.save(p);
+					this.cardsDist[rand]=true;
+				}
 			}
 			else
 				i--;
 		}
 
+		
+		//next judge
+		for (int i = 0; i < players.size()-1; i++) {
+			if (players.get(i).getPlayerid()==judgeindex) {
+				judgeindex=players.get(i+1).getPlayerid();
+				break;
+			}
+			judgeindex=players.get(0).getPlayerid();
+		}
+		
 		//change round
 		round++;
 		question=null;
