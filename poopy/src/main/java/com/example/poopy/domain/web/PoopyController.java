@@ -74,36 +74,7 @@ public class PoopyController {
     	model.addAttribute("answers", cards);
 		return "index";
 	}
-    
-    @RequestMapping(value={"/addAns"})
-	public String addAns(Model model) {
-    	model.addAttribute("answer", new String());
-		return "addAns";
-	}
-    
-    @RequestMapping(value = "/saveAns", method = RequestMethod.POST)
-    public String saveAns(String answer){
-    	System.out.println(answer);
-        cards.add(answer);
-        return "redirect:/";
-    }
-    
-    @RequestMapping(value = "/saveQuest", method = RequestMethod.POST)
-    public String save(String question){
 
-    	System.out.println(question);
-        questions.add(question);
-        return "redirect:/";
-    }
-    
-    @RequestMapping(value={"/addQuest"})
-	public String addQuest(Model model) {
-    	String n = "";
-    	model.addAttribute("question", n);
-		return "addQuest";
-	}
-    
-    //how to login in postman?
     @RequestMapping(value={"/login"})
    	public String login() {
    		return "login";

@@ -22,9 +22,9 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        /*http
+        http
             .authorizeRequests()
-                .antMatchers("/", "/login", "/register").permitAll()
+                .antMatchers("/games", "/newGame", "/game/*", "/join/*", "/startGame/*", "/chooseQuest/*", "/answer/*", "/chooseWinner/*").permitAll()
                 .anyRequest().authenticated()
                 .and()
             .formLogin()
@@ -32,7 +32,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .and()
             .logout()
-                .permitAll();*/
+                .permitAll();
     	http.cors().and().csrf().disable();
     }
 
