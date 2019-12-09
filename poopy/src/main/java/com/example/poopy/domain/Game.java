@@ -12,8 +12,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-import org.springframework.web.bind.annotation.ModelAttribute;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
