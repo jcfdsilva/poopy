@@ -37,7 +37,7 @@ public class PoopyController {
 	
 	PoopyController(){
 		cards.add("card1&&dsfsfds");
-		cards.add("card2");
+		cards.add("cardfd2");
 		cards.add("card3");
 		cards.add("card4");
 		cards.add("card5");
