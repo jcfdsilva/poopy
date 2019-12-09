@@ -60,7 +60,7 @@ public class PoopyController {
 		cards.add("card22");
 		cards.add("card23");
 		cards.add("card24");
-		questions.add("quest1");
+		questions.add("quest1&&hjcoihizhiu");
 		questions.add("quest2");
 		questions.add("quest3");
 		questions.add("quest4");

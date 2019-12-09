@@ -19,6 +19,8 @@ public class Game {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long gameid;
+
+	@Column(name="questions", columnDefinition="CLOB")
 	private String[] questions=new String[6];
 	private String code;
 	private String question;
