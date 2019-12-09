@@ -36,7 +36,7 @@ public class PoopyController {
 	List<String> questions = new ArrayList<String>();
 	
 	PoopyController(){
-		cards.add("card1&&");
+		cards.add("card1&&dsfsfds");
 		cards.add("card2");
 		cards.add("card3");
 		cards.add("card4");
