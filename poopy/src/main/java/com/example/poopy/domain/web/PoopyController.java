@@ -36,36 +36,36 @@ public class PoopyController {
 	List<String> questions = new ArrayList<String>();
 	
 	PoopyController(){
-		cards.add("card1&&dsfsfds");
-		cards.add("cardfd2");
-		cards.add("card3");
-		cards.add("card4");
-		cards.add("card5");
-		cards.add("card6");
-		cards.add("card7");
-		cards.add("card8");
-		cards.add("card9");
-		cards.add("card10");
-		cards.add("card11");
-		cards.add("card12");
-		cards.add("card13");
-		cards.add("card14");
-		cards.add("card15");
-		cards.add("card16");
-		cards.add("card17");
-		cards.add("card18");
-		cards.add("card19");
-		cards.add("card20");
-		cards.add("card21");
-		cards.add("card22");
-		cards.add("card23");
-		cards.add("card24");
-		questions.add("quest1&&hjcoihizhiu");
-		questions.add("quest2");
-		questions.add("quest3");
-		questions.add("quest4");
-		questions.add("quest5");
-		questions.add("quest6");
+		cards.add("Barack Obama");
+		cards.add("Auschwitz");
+		cards.add("Racism");
+		cards.add("The big bang");
+		cards.add("Scientology");
+		cards.add("Kanye West");
+		cards.add("Nazis");
+		cards.add("Axe body spray");
+		cards.add("Agriculture");
+		cards.add("Oompa Loompas");
+		cards.add("Puberty");
+		cards.add("Alcoholism");
+		cards.add("Obesity");
+		cards.add("BATMAN!!");
+		cards.add("The KKK");
+		cards.add("Ghoosts");
+		cards.add("My soul");
+		cards.add("Being fabulous");
+		cards.add("Vikings");
+		cards.add("Grandma");
+		cards.add("Uppercuts");
+		cards.add("Italians");
+		cards.add("Saunas");
+		cards.add("Catapults");
+		questions.add("White people like &&");
+		questions.add("I drink to forget &&");
+		questions.add("&&? There's an app for that!");
+		questions.add("When I'm in prison, I'll have && smuggled in");
+		questions.add("The class field trip was ruined by &&");
+		questions.add("&& will make america great again!");
 	}
 	
     @RequestMapping(value={"/"})
