@@ -38,6 +38,7 @@ public class Player {
 		isCreator=creator;
 	}
 	
+	//adds a card in the first null slot availble
 	public void addCard(String card) {
 		for (int i = 0; i < cards.length; i++) {
 			if(cards[i]==null) {
@@ -47,6 +48,7 @@ public class Player {
 		}
 	}
 
+	//erases one card with the String requested but only if player is in the game
 	public boolean erase(String card, Long gameId) {
 		if(gameId!=game.getGameid())
 			return false;

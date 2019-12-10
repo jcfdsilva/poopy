@@ -47,6 +47,7 @@ public class Game {
 	}
 	
 	//the judge sends a post to choose the question being played
+	//only now the players answers are set to null so when each round finishes we still can display the winner card
 	public void chooseQuestion(String question, PlayerRepository repo) {
 		if(!started)
 			return;
@@ -70,6 +71,7 @@ public class Game {
 		}
 	}
 	
+	//multiple actions are done here to choose teh winner but also to restart the round
 	public void chooseWinner(PlayerRepository prepo, String[] questions, Long winnerid) {
 		//get who the winner is
 		for (int i = 0; i < players.size(); i++) {
@@ -122,6 +124,7 @@ public class Game {
 		this.questions=questions;
 	}
 
+//	fills in the variables needed to start the game
 	public void StartGame(PlayerRepository prepo, String[] questions, String[] cards) {
 		this.questions=questions;
 		int judge=(int)((Math.random())*this.players.size());

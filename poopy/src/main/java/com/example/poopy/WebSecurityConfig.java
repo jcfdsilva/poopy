@@ -22,6 +22,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+    	//pages for application don't need authentification, only the one thymleaf page needs it
         http
             .authorizeRequests()
                 .antMatchers("/games", "/newGame", "/game/*", "/join/*", "/startGame/*", "/chooseQuest/*", "/answer/*", "/chooseWinner/*").permitAll()

@@ -68,6 +68,7 @@ public class PoopyController {
 		questions.add("&& will make america great again!");
 	}
 	
+	//display all cards in browser
     @RequestMapping(value={"/"})
 	public String index(Model model) {
     	model.addAttribute("questions", questions);
@@ -75,12 +76,13 @@ public class PoopyController {
 		return "index";
 	}
 
+    //for login
     @RequestMapping(value={"/login"})
    	public String login() {
    		return "login";
    	}
     
-    
+    //create a new game
     @RequestMapping(value={"/newGame"}, method = RequestMethod.POST)
 	public @ResponseBody Long newGame(@RequestBody String name) {
     	Game g = new Game();
@@ -91,6 +93,7 @@ public class PoopyController {
 		return g.getGameid();
 	}
     
+    //judge will choose a question to be played (game needs to be created before)
     @RequestMapping(value={"/chooseQuest/{id}"}, method = RequestMethod.POST)
 	public @ResponseBody boolean chooseQuestion(@PathVariable("id") Long id, @RequestBody String quest) {
     	Optional<Game> game = grepository.findById(id);
@@ -103,6 +106,7 @@ public class PoopyController {
     	return true;
 	}
     
+    //players can answer with a card, the string received contains player id and the card played
     @RequestMapping(value={"/answer/{id}"}, method = RequestMethod.POST)
 	public @ResponseBody boolean answer(@PathVariable("id") Long id, @RequestBody String answer) {
     	Optional<Game> game = grepository.findById(id);
@@ -132,17 +136,6 @@ public class PoopyController {
     	return grepository.findById(id);
     }
     
-    @RequestMapping(value="/deleteQuest/{quest}", method = RequestMethod.GET)
-    public String deleteQuest(@PathVariable("quest") String quest) {	
-    	for (int i = 0; i < questions.size(); i++) {
-			if(questions.get(i).equals(quest)){
-				questions.remove(i);
-		    	return "redirect:/";
-			}
-		}
-    	return "redirect:/";
-    }
-    
  // RESTful service to get all games
     @RequestMapping(value="/games", method = RequestMethod.GET)
     public @ResponseBody List<Game> gameListRest() {
@@ -168,6 +161,8 @@ public class PoopyController {
     }
 
 
+    //judge can choose one winner for that round (game needs to be present and started)
+    //the new round needs 6 more question cards to start
     @RequestMapping(value="/chooseWinner/{id}", method = RequestMethod.POST)
     public @ResponseBody boolean chooseWinner(@PathVariable("id") Long id, @RequestBody String winnerid) {
     	Optional<Game> game = grepository.findById(id);
@@ -203,6 +198,7 @@ public class PoopyController {
     		return false;
     }
     
+    //method used to pick 6 random cards in the Arraylist of question cards
     private String[] pickSixQuest() {
     	String[] questions = new String[6];
     	boolean[] questionsUsed = new boolean[this.questions.size()];
